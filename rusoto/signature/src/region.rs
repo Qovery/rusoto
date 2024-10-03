@@ -53,6 +53,9 @@ pub enum Region {
     /// Region that covers the Southern part of Asia Pacific
     ApSouth1,
 
+    /// Region that covers the Southern part of Asia Pacific
+    ApSouth2,
+
     /// Region that covers the South-Eastern part of Asia Pacific
     ApSoutheast1,
 
@@ -82,6 +85,9 @@ pub enum Region {
 
     /// Region that covers Southern Europe
     EuSouth1,
+
+    /// Region that covers Southern Europe
+    EuSouth2,
 
     /// Bahrain, Middle East South
     MeSouth1,
@@ -148,6 +154,7 @@ impl Region {
             Region::ApNortheast2 => "ap-northeast-2",
             Region::ApNortheast3 => "ap-northeast-3",
             Region::ApSouth1 => "ap-south-1",
+            Region::ApSouth2 => "ap-south-2",
             Region::ApSoutheast1 => "ap-southeast-1",
             Region::ApSoutheast2 => "ap-southeast-2",
             Region::ApSoutheast3 => "ap-southeast-3",
@@ -158,6 +165,7 @@ impl Region {
             Region::EuWest3 => "eu-west-3",
             Region::EuNorth1 => "eu-north-1",
             Region::EuSouth1 => "eu-south-1",
+            Region::EuSouth2 => "eu-south-2",
             Region::MeSouth1 => "me-south-1",
             Region::MeCentral1 => "me-central-1",
             Region::SaEast1 => "sa-east-1",
@@ -250,6 +258,7 @@ impl FromStr for Region {
             "ap-northeast-2" | "apnortheast2" => Ok(Region::ApNortheast2),
             "ap-northeast-3" | "apnortheast3" => Ok(Region::ApNortheast3),
             "ap-south-1" | "apsouth1" => Ok(Region::ApSouth1),
+            "ap-south-2" | "apsouth2" => Ok(Region::ApSouth2),
             "ap-southeast-1" | "apsoutheast1" => Ok(Region::ApSoutheast1),
             "ap-southeast-2" | "apsoutheast2" => Ok(Region::ApSoutheast2),
             "ap-southeast-3" | "apsoutheast3" => Ok(Region::ApSoutheast3),
@@ -260,6 +269,7 @@ impl FromStr for Region {
             "eu-west-3" | "euwest3" => Ok(Region::EuWest3),
             "eu-north-1" | "eunorth1" => Ok(Region::EuNorth1),
             "eu-south-1" | "eusouth1" => Ok(Region::EuSouth1),
+            "eu-south-2" | "eusouth2" => Ok(Region::EuSouth2),
             "me-south-1" | "mesouth1" => Ok(Region::MeSouth1),
             "me-central-1" | "mecentral1" => Ok(Region::MeCentral1),
             "sa-east-1" | "saeast1" => Ok(Region::SaEast1),
@@ -327,6 +337,7 @@ mod tests {
         assert_eq!("ap-northeast-2".parse(), Ok(Region::ApNortheast2));
         assert_eq!("ap-northeast-3".parse(), Ok(Region::ApNortheast3));
         assert_eq!("ap-south-1".parse(), Ok(Region::ApSouth1));
+        assert_eq!("ap-south-2".parse(), Ok(Region::ApSouth2));
         assert_eq!("ap-southeast-1".parse(), Ok(Region::ApSoutheast1));
         assert_eq!("ap-southeast-2".parse(), Ok(Region::ApSoutheast2));
         assert_eq!("ap-southeast-3".parse(), Ok(Region::ApSoutheast3));
@@ -337,6 +348,7 @@ mod tests {
         assert_eq!("eu-west-3".parse(), Ok(Region::EuWest3));
         assert_eq!("eu-north-1".parse(), Ok(Region::EuNorth1));
         assert_eq!("eu-south-1".parse(), Ok(Region::EuSouth1));
+        assert_eq!("eu-south-2".parse(), Ok(Region::EuSouth2));
         assert_eq!("me-south-1".parse(), Ok(Region::MeSouth1));
         assert_eq!("me-central-1".parse(), Ok(Region::MeCentral1));
         assert_eq!("sa-east-1".parse(), Ok(Region::SaEast1));
@@ -358,6 +370,7 @@ mod tests {
         assert_tokens(&Region::ApNortheast2, &tokens_for_region("ap-northeast-2"));
         assert_tokens(&Region::ApNortheast3, &tokens_for_region("ap-northeast-3"));
         assert_tokens(&Region::ApSouth1, &tokens_for_region("ap-south-1"));
+        assert_tokens(&Region::ApSouth2, &tokens_for_region("ap-south-2"));
         assert_tokens(&Region::ApSoutheast1, &tokens_for_region("ap-southeast-1"));
         assert_tokens(&Region::ApSoutheast2, &tokens_for_region("ap-southeast-2"));
         assert_tokens(&Region::ApSoutheast3, &tokens_for_region("ap-southeast-3"));
@@ -368,6 +381,7 @@ mod tests {
         assert_tokens(&Region::EuWest3, &tokens_for_region("eu-west-3"));
         assert_tokens(&Region::EuNorth1, &tokens_for_region("eu-north-1"));
         assert_tokens(&Region::EuSouth1, &tokens_for_region("eu-south-1"));
+        assert_tokens(&Region::EuSouth2, &tokens_for_region("eu-south-2"));
         assert_tokens(&Region::MeSouth1, &tokens_for_region("me-south-1"));
         assert_tokens(&Region::MeCentral1, &tokens_for_region("me-central-1"));
         assert_tokens(&Region::SaEast1, &tokens_for_region("sa-east-1"));
