@@ -98,6 +98,9 @@ pub enum Region {
     /// Region that covers Middle East (UAE)
     MeCentral1,
 
+    /// Region that covers Mexico
+    MxCentral1,
+
     /// Region that covers South America
     SaEast1,
 
@@ -162,6 +165,7 @@ impl Region {
             Region::ApSoutheast2 => "ap-southeast-2",
             Region::ApSoutheast3 => "ap-southeast-3",
             Region::CaCentral1 => "ca-central-1",
+            Region::MxCentral1 => "mx-central-1",
             Region::EuCentral1 => "eu-central-1",
             Region::EuCentral2 => "eu-central-2",
             Region::EuWest1 => "eu-west-1",
@@ -277,6 +281,7 @@ impl FromStr for Region {
             "eu-south-2" | "eusouth2" => Ok(Region::EuSouth2),
             "me-south-1" | "mesouth1" => Ok(Region::MeSouth1),
             "me-central-1" | "mecentral1" => Ok(Region::MeCentral1),
+            "mx-central-1" | "mxcentral1" => Ok(Region::MxCentral1),
             "sa-east-1" | "saeast1" => Ok(Region::SaEast1),
             "us-east-1" | "useast1" => Ok(Region::UsEast1),
             "us-east-2" | "useast2" => Ok(Region::UsEast2),
@@ -357,6 +362,7 @@ mod tests {
         assert_eq!("eu-south-2".parse(), Ok(Region::EuSouth2));
         assert_eq!("me-south-1".parse(), Ok(Region::MeSouth1));
         assert_eq!("me-central-1".parse(), Ok(Region::MeCentral1));
+        assert_eq!("mx-central-1".parse(), Ok(Region::MxCentral1));
         assert_eq!("sa-east-1".parse(), Ok(Region::SaEast1));
         assert_eq!("us-east-1".parse(), Ok(Region::UsEast1));
         assert_eq!("us-east-2".parse(), Ok(Region::UsEast2));
@@ -391,6 +397,7 @@ mod tests {
         assert_tokens(&Region::EuSouth2, &tokens_for_region("eu-south-2"));
         assert_tokens(&Region::MeSouth1, &tokens_for_region("me-south-1"));
         assert_tokens(&Region::MeCentral1, &tokens_for_region("me-central-1"));
+        assert_tokens(&Region::MxCentral1, &tokens_for_region("mx-central-1"));
         assert_tokens(&Region::SaEast1, &tokens_for_region("sa-east-1"));
         assert_tokens(&Region::UsEast1, &tokens_for_region("us-east-1"));
         assert_tokens(&Region::UsEast2, &tokens_for_region("us-east-2"));
